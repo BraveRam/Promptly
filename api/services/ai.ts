@@ -1,7 +1,7 @@
 import { GoogleGenAI } from "@google/genai";
-import { env } from "../config/env.ts";
-import { type Message } from "../types/types.ts";
-import { SYSTEM_MESSAGE } from "../config/constants.ts";
+import { env } from "../config/env.js";
+import { type Message } from "../types/types.js";
+import { SYSTEM_MESSAGE } from "../config/constants.js";
 
 const getResponse = async (messages: Message[]) => {
   const ai = new GoogleGenAI({

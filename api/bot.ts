@@ -1,12 +1,12 @@
 import { Bot, session, webhookCallback } from "grammy";
 import dotenv from "dotenv";
-import { getResponse } from "./services/ai.ts";
-import { type MyContext, type SessionData } from "./types/types.ts";
-import { users } from "./schema/schema.ts";
+import { getResponse } from "./services/ai.js";
+import { type MyContext, type SessionData } from "./types/types.js";
+import { users } from "./schema/schema.js";
 import { eq } from "drizzle-orm";
-import { db } from "./db/index.ts";
-import { env } from "./config/env.ts";
-import { escapeMarkdownV2, splitText } from "./utils/utils.ts";
+import { db } from "./db/index.js";
+import { env } from "./config/env.js";
+import { escapeMarkdownV2, splitText } from "./utils/utils.js";
 
 dotenv.config();
 
