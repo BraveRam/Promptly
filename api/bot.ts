@@ -79,7 +79,7 @@ bot.on("message", async (ctx) => {
 
   if (ctx.session.messages.length >= 2) {
     await ctx.reply(
-      "<i>⏳ You can only send 5 messages per minute. Please wait.</i>",
+      "<i>⏳ You can only send 2 messages per minute. Please wait.</i>",
       {
         parse_mode: "HTML",
       }
