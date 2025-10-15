@@ -2,7 +2,7 @@
   "name": "promptly",
   "version": "1.0.0",
   "description": "Telegram bot with Node + Drizzle + Postgres",
-  "main": "src/bot.ts",
+  "main": "api/bot.ts",
   "type": "module",
   "scripts": {
     "dev": "nodemon --watch src --ext ts --exec ts-node src/bot.ts",
