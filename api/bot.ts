@@ -17,7 +17,7 @@ const initialConversation = (): SessionData => ({
   convMessages: [
     
   ],
-  messages: [],
+  messages: []
 });
 
 bot.use(session({ initial: initialConversation }));
