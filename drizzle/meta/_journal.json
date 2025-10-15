@@ -5,22 +5,8 @@
     {
       "idx": 0,
       "version": "7",
-      "when": 1758620022965,
-      "tag": "0000_smiling_calypso",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "7",
-      "when": 1758710187718,
-      "tag": "0001_sharp_umar",
-      "breakpoints": true
-    },
-    {
-      "idx": 2,
-      "version": "7",
-      "when": 1758710249861,
-      "tag": "0002_peaceful_mongu",
+      "when": 1760508859264,
+      "tag": "0000_steep_pete_wisdom",
       "breakpoints": true
     }
   ]

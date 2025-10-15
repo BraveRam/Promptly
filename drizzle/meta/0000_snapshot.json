@@ -1,5 +1,5 @@
 {
-  "id": "36e07344-4598-4ce7-9ccf-405ef553e9c3",
+  "id": "e6772c74-d22e-4520-b37f-9e4d94b10e11",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -16,9 +16,9 @@
         },
         "telegram_id": {
           "name": "telegram_id",
-          "type": "integer",
+          "type": "text",
           "primaryKey": false,
-          "notNull": false
+          "notNull": true
         },
         "username": {
           "name": "username",

@@ -5,17 +5,10 @@
   "main": "src/bot.ts",
   "type": "module",
   "scripts": {
-    "dev": "nodemon --watch src --ext ts --exec ts-node src/main.ts",
+    "dev": "nodemon --watch src --ext ts --exec ts-node src/bot.ts",
     "build": "tsc",
-    "start": "node dist/main.js"
+    "start": "node build/bot.js"
   },
-  "keywords": [
-    "telegram",
-    "bot",
-    "node",
-    "drizzle",
-    "postgres"
-  ],
   "author": "",
   "license": "MIT",
   "dependencies": {

@@ -1,7 +1,7 @@
 import { GoogleGenAI } from "@google/genai";
-import { env } from "../config/env.js";
-import { type Message } from "../types/types.js";
-import { SYSTEM_MESSAGE } from "../config/constants.js";
+import { env } from "../config/env.ts";
+import { type Message } from "../types/types.ts";
+import { SYSTEM_MESSAGE } from "../config/constants.ts";
 
 const getResponse = async (messages: Message[]) => {
   const ai = new GoogleGenAI({
@@ -15,13 +15,9 @@ const getResponse = async (messages: Message[]) => {
   ];
 
   const config: {
-    thinkingConfig: { thinkingBudget: number };
     tools: { googleSearch: {} }[];
     systemInstruction: { text: string }[];
   } = {
-    thinkingConfig: {
-      thinkingBudget: -1,
-    },
     tools,
     systemInstruction: [
       {
@@ -30,7 +26,7 @@ const getResponse = async (messages: Message[]) => {
     ],
   };
 
-  const model = "gemini-2.5-flash";
+  const model = "gemini-2.0-flash";
 
   const formattedMessages = messages.map((msg) => ({
     role: msg.role === "assistant" ? "model" : "user",

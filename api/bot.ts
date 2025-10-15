@@ -1,16 +1,17 @@
 import { Bot, session } from "grammy";
 import dotenv from "dotenv";
-import { getResponse } from "./services/ai.js";
-import { type MyContext, type SessionData } from "./types/types.js";
-import { users } from "./schema/schema.js";
+import { getResponse } from "./services/ai.ts";
+import { type MyContext, type SessionData } from "./types/types.ts";
+import { users } from "./schema/schema.ts";
 import { eq } from "drizzle-orm";
-import { db } from "./db/index.js";
-import { env } from "./config/env.js";
-import { escapeMarkdownV2, splitText } from "./utils/utils.js";
+import { db } from "./db/index.ts";
+import { env } from "./config/env.ts";
+import { escapeMarkdownV2, splitText } from "./utils/utils.ts";
 
 dotenv.config();
 
 const bot = new Bot<MyContext>(env.BOT_TOKEN!);
+
 
 const initialConversation = (): SessionData => ({
   convMessages: [
@@ -37,7 +38,7 @@ bot.command("start", async (ctx) => {
 
     await bot.api.sendMessage(
       ctx.chat.id,
-      `🚀 Hello, ${ctx.chat.first_name || "there"}!\n\nWelcome to Promptly! 🎨✨\n\nSend me any text or idea, and I'll supercharge it into the perfect prompt to get the best results. 💡💬\n\nLet's turn your simple thoughts into AI magic! 🪄`
+      `🚀 Hello, ${ctx.chat.first_name || "there"}!\n\nWelcome to Promptly! 🎨✨\n\nSend me any text or idea, and I'll supercharge it into the perfect prompt to get the best results from an AI model. 💡💬\n\nLet's turn your simple thoughts into AI magic! 🪄`
     );
   } else {
     await bot.api.sendMessage(
@@ -107,9 +108,12 @@ bot.on("message", async (ctx) => {
 
 bot.catch((err) => {
   const ctx = err.ctx;
+  console.error(err);
   ctx.reply("An error occurred while processing your request - try again later.");
   console.error(`Error while handling update ${ctx.update.update_id}:`);
 });
 
 console.log("The bot is starting....");
-bot.start();
+bot.start({
+  drop_pending_updates: true
+});
