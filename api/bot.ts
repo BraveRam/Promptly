@@ -77,7 +77,7 @@ bot.on("message", async (ctx) => {
     (timestamp) => timestamp > oneMinuteAgo
   );
 
-  if (ctx.session.messages.length >= 5) {
+  if (ctx.session.messages.length >= 2) {
     await ctx.reply(
       "<i>⏳ You can only send 5 messages per minute. Please wait.</i>",
       {
