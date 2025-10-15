@@ -1,4 +1,4 @@
-import { Bot, session } from "grammy";
+import { Bot, session, webhookCallback } from "grammy";
 import dotenv from "dotenv";
 import { getResponse } from "./services/ai.ts";
 import { type MyContext, type SessionData } from "./types/types.ts";
@@ -114,6 +114,8 @@ bot.catch((err) => {
 });
 
 console.log("The bot is starting....");
-bot.start({
-  drop_pending_updates: true
-});
+// bot.start({
+//   drop_pending_updates: true
+// });
+
+export default webhookCallback(bot, "https");
