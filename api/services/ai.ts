@@ -26,7 +26,7 @@ const getResponse = async (messages: Message[]) => {
     ],
   };
 
-  const model = "gemini-2.0-flash";
+  const model = "gemini-2.5-flash";
 
   const formattedMessages = messages.map((msg) => ({
     role: msg.role === "assistant" ? "model" : "user",
