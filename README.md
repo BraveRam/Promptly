@@ -52,7 +52,7 @@ GEMINI_API_KEY=your_google_gemini_api_key
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/BraveRam/Promptly
    cd promptly
    ```
 
